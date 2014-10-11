@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\n\nshinyUI(pageWithSidebar(\n    \n    titlePanel(\"Filter on mtcars\"),\n    \n    sidebarPanel(\n\n        helpText(\"The purpose of this application is to display in the main panel's table the subset of the mtcars dataset which verifies the filters specified in the sidebar controls\"),\n        \n        br(),\n\n        sliderInput(\"slider\", \"mpg\", min = 10, max = 34, value = c(20, 25)),\n\n        br(),\n\n        helpText(\"Select range of miles per gallon\",\n                 \"the carburetor selection list\",\n                 \"will update consequently.\"),\n        \n        br(),\n\n        uiOutput(\"carb\")\n    ),\n    \n    \n    mainPanel(\n        helpText(\"The content of the cars table\",\n                 \"will be updated applying\",\n                 \"the selected filters.\"),\n\n        tableOutput(\"carTable\")\n    )\n)\n)\n",
+    "created" : 1413066505028.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3547629172",
+    "id" : "17E53FB8",
+    "lastKnownWriteTime" : 1413070403,
+    "path" : "C:/Dev/R/Shiny/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\n\ncarbs <- function(sliderMpg){\n    return(sort(unique(subset(mtcars, mpg >= sliderMpg[1] & mpg <= sliderMpg[2], carb))[,1]))\n}\n\nshinyServer(function(input, output) {\n    # rendering the carburetor list as a result of the change in the mpg slider\n    output$carb <- renderUI({\n        selectInput(\"carb\", \"Select #carburetors\", carbs(input$slider))\n    })\n    \n    #rendering the results table after applying the two filters\n    output$carTable <- renderTable({\n        subset(mtcars, mpg >= input$slider[1] & mpg <= input$slider[2] & carb == input$carb)\n    })    \n})\n\n",
+    "created" : 1413066505190.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3972232829",
+    "id" : "510A8032",
+    "lastKnownWriteTime" : 1413069789,
+    "path" : "C:/Dev/R/Shiny/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
